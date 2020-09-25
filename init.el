@@ -64,13 +64,18 @@
     (load-theme theme 'NO-CONFIRM))
   )
 
-(progn ;; handling (keybindings etc.
+(progn ;; handling (keybindings etc.)
+
+  ;; don't be an Emacs newbie
+  (defalias 'yes-or-no-p 'y-or-n-p)
 
   ;; basic
   (global-unset-key (kbd "C-z"))
   (global-set-key (kbd "C-x m") 'eshell)
   (global-set-key (kbd "C-x t") 'toggle-truncate-lines)
   (global-set-key (kbd "C-x s") 'switch-to-scratch-buffer)
+  (global-set-key (kbd "C-x p") 'list-processes)
+  (global-set-key (kbd "C-x C-r") 'rename-buffer)
 
   ;; buffers
   (global-set-key (kbd "M-n") 'next-buffer)
@@ -94,7 +99,7 @@
   (global-set-key (kbd "C-x g") 'magit-status)
   )
 
-(progn ;; looks
+(progn ;; looks and sound
 
   ;; fix the UI
   (tool-bar-mode 0)
