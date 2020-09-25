@@ -1,7 +1,7 @@
 ;; init.el of laerling
 ;; Copyright (C) 2020, laerling <laerling@posteo.de>
 
-(progn ;; most important
+(progn ;; packaging
 
   ;; define packages to install
   (setq package-list '(
@@ -22,19 +22,7 @@
 
 		       ))
 
-  ;; fix the UI
-  (tool-bar-mode 0)
-  (menu-bar-mode 0)
-
-  ;; make the scratch buffer more welcoming
-  (setq initial-scratch-message "")
-  (setq initial-major-mode 'text-mode)
-
-  ;; disable the bell
-  (setq ring-bell-function (lambda ()))
-  )
-
-(progn ;; packaging
+  ;; prepare cache
   (require 'package)
   (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
   (unless package--initialized (package-initialize t))
@@ -108,9 +96,43 @@
 
 (progn ;; looks
 
+  ;; fix the UI
+  (tool-bar-mode 0)
+  (menu-bar-mode 0)
+
+  ;; show the column we're in
+  (column-number-mode 1)
+
+  ;; make the scratch buffer more welcoming
+  (setq initial-scratch-message "")
+  (setq initial-major-mode 'text-mode)
+
+  ;; disable the bell
+  (setq visible-bell nil)
+  (setq ring-bell-function (lambda ()))
+
   ;; set a theme
   (switch-to-theme 'spacemacs-dark)
   )
 
+(progn ;; others
+
+  ;; set GO environment
+  (setenv "PATH" (concat (getenv "HOME") "/go/bin:" (getenv "PATH")))
+  )
+
 
 ;; custom-set-variables beyond this point
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   '(spacemacs-theme rust-mode nix-mode markdown-mode json-mode go-mode smart-window magit)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
