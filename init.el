@@ -3,6 +3,9 @@
 
 (progn ;; packaging
 
+  ;; must stand at the beginning
+  (package-initialize)
+
   ;; define packages to install
   (setq package-list '(
 
