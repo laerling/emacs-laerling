@@ -115,6 +115,9 @@
   (setq initial-scratch-message "")
   (setq initial-major-mode 'text-mode)
 
+  ;; don't display the Emacs main screen
+  (setq inhibit-startup-screen t)
+
   ;; disable the bell
   (setq visible-bell nil)
   (setq ring-bell-function (lambda ()))
