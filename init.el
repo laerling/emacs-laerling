@@ -61,7 +61,7 @@
 					    (custom-available-themes)
 					    )))))
     (when (not (member theme (custom-available-themes)))
-      (error "No such theme"))
+      (error "No such theme: %S" theme))
     (dolist (active-theme custom-enabled-themes)
       (disable-theme active-theme))
     (load-theme theme 'NO-CONFIRM))
