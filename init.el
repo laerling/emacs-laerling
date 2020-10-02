@@ -71,6 +71,7 @@
 
   ;; don't be an Emacs newbie
   (defalias 'yes-or-no-p 'y-or-n-p)
+  (setq disabled-command-function nil)
 
   ;; basic
   (global-unset-key (kbd "C-z"))
