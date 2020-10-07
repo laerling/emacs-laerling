@@ -126,7 +126,8 @@
   (setq ring-bell-function (lambda ()))
 
   ;; set a theme
-  (switch-to-theme 'spacemacs-dark)
+  (unless custom-enabled-themes
+    (switch-to-theme 'spacemacs-dark))
   )
 
 (progn ;; others
