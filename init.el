@@ -12,6 +12,7 @@
 		       ;; UI
 		       magit
 		       smart-window
+		       zygospore
 
 		       ;; programming modes
 		       go-mode
@@ -84,6 +85,7 @@
   ;; buffers
   (global-set-key (kbd "M-n") 'next-buffer)
   (global-set-key (kbd "M-p") 'next-buffer)
+  (global-set-key (kbd "C-x 1") 'zygospore-toggle-delete-other-windows)
 
   ;; windows
   (global-set-key (kbd "C-<up>"     ) 'windmove-up)
