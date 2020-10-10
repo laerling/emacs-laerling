@@ -125,9 +125,10 @@
   (setq visible-bell nil)
   (setq ring-bell-function (lambda ()))
 
-  ;; set a theme
-  (unless custom-enabled-themes
-    (switch-to-theme 'spacemacs-dark))
+  ;; load custom script, if available
+  (let ((custom-file (concat (file-name-directory load-file-name) "custom.el")))
+    (when (file-exists-p custom-file)
+      (load-file custom-file)))
   )
 
 (progn ;; others
