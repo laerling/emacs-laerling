@@ -66,6 +66,27 @@
     (dolist (active-theme custom-enabled-themes)
       (disable-theme active-theme))
     (load-theme theme 'NO-CONFIRM))
+
+  ;; kill-buffer-and-frame is just kill-buffer-and-window with s/window/frame/
+  (defun kill-buffer-and-frame ()
+    "Kill the current buffer and delete the selected frame."
+    (interactive)
+    (let ((frame-to-delete (selected-frame))
+	  (buffer-to-kill (current-buffer))
+	  (delete-frame-hook (lambda () (ignore-errors (delete-frame)))))
+      (unwind-protect
+	  (progn
+	    (add-hook 'kill-buffer-hook delete-frame-hook t t)
+	    (if (kill-buffer (current-buffer))
+		;; If `delete-frame' failed before, we rerun it to regenerate
+		;; the error so it can be seen in the echo area.
+		(when (eq (selected-frame) frame-to-delete)
+		  (delete-frame))))
+	;; If the buffer is not dead for some reason (probably because
+	;; of a `quit' signal), remove the hook again.
+	(ignore-errors
+	  (with-current-buffer buffer-to-kill
+	    (remove-hook 'kill-buffer-hook delete-frame-hook t))))))
   )
 
 (progn ;; handling (keybindings etc.)
@@ -81,6 +102,7 @@
   (global-set-key (kbd "C-x s") 'switch-to-scratch-buffer)
   (global-set-key (kbd "C-x p") 'list-processes)
   (global-set-key (kbd "C-x C-r") 'rename-buffer)
+  (global-set-key (kbd "C-x 6 0") 'kill-buffer-and-frame)
 
   ;; buffers
   (global-set-key (kbd "M-n") 'next-buffer)
@@ -126,7 +148,7 @@
   (setq ring-bell-function (lambda ()))
 
   ;; load custom script, if available
-  (let ((custom-file (concat (file-name-directory load-file-name) "custom.el")))
+  (let ((custom-file (concat (file-name-directory (or load-file-name "")) "custom.el")))
     (when (file-exists-p custom-file)
       (load-file custom-file)))
   )
@@ -145,7 +167,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(spacemacs-theme rust-mode nix-mode markdown-mode json-mode go-mode smart-window magit)))
+   '(zygospore spacemacs-theme rust-mode nix-mode markdown-mode json-mode go-mode smart-window magit)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
