@@ -39,20 +39,37 @@
 
 (progn ;; functions
 
-  (defun find-init-file ()
-    "Find the file this function was defined in."
-    (interactive)
-    (find-file (symbol-file 'find-init-file)))
+  (defun find-init-file (&optional other-window)
+    "Find the file this function was defined in.
+If OTHER-WINDOW is non-nil, find init file in other window."
+    (interactive "P")
+    (let ((init-file-name (symbol-file 'find-init-file)))
+      (if other-window
+	  (find-file-other-window init-file-name)
+	(find-file init-file-name))))
 
-  (defun switch-to-scratch-buffer ()
-    "Switch to the scratch buffer, creating it if it doesn't exist already."
-    (interactive)
-    (let ((scratch-buffer (get-buffer "*scratch*")))
-      (if scratch-buffer
-	  (switch-to-buffer scratch-buffer)
-	(switch-to-buffer (generate-new-buffer "*scratch*"))
-	(set-buffer-major-mode (current-buffer))
-	(insert initial-scratch-message))))
+  (defun find-custom-file (&optional other-window)
+    "Find the custom.el file.
+If OTHER-WINDOW is non-nil, find custom.el file in other window."
+    (interactive "P")
+    (let ((custom-file-name
+	   (concat (url-basepath (symbol-file 'find-custom-file)) "custom.el")))
+      (if other-window
+	  (find-file-other-window custom-file-name)
+	(find-file custom-file-name))))
+
+  (defun switch-to-scratch-buffer (&optional other-window)
+    "Switch to the scratch buffer, creating it if it doesn't exist already.
+If OTHER-WINDOW is non-nil, switch to the scratch buffer in other window."
+    (interactive "P")
+    (let ((scratch-buffer
+	   (or (get-buffer "*scratch*")
+	       (generate-new-buffer "*scratch*"))))
+      (if other-window
+	  (switch-to-buffer-other-window scratch-buffer)
+	(switch-to-buffer scratch-buffer))
+      (set-buffer-major-mode (current-buffer))
+      (insert initial-scratch-message)))
 
   (defun switch-to-theme (theme)
     "Disable all active themes and load THEME."
