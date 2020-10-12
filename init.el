@@ -31,11 +31,16 @@
   (require 'package)
   (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
   (unless package--initialized (package-initialize t))
-  (package-refresh-contents)
 
   ;; install packages
   (dolist (package package-list)
-    (package-install package))
+    (condition-case nil
+    	(package-install package)
+      (error
+       (message
+    	"package-install errored. Refreshing package list and retrying.")
+       (package-refresh-contents)
+       (package-install package))) )
   )
 
 (progn ;; functions
