@@ -1,8 +1,11 @@
 *~
 \#*
+
 /elpa
+/server
 /transient
 /url
+
 recentf
 session.*
 custom.el
