@@ -38,7 +38,8 @@
     	(package-install package)
       (error
        (message
-    	"package-install errored. Refreshing package list and retrying.")
+    	"Installing package " (symbol-name package)
+	"failed. Refreshing package list and retrying.")
        (package-refresh-contents)
        (package-install package))) )
   )
