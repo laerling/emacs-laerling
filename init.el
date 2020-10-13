@@ -176,12 +176,6 @@ If OTHER-WINDOW is non-nil, switch to the scratch buffer in other window."
       (load-file custom-file)))
   )
 
-(progn ;; others
-
-  ;; set GO environment
-  (setenv "PATH" (concat (getenv "HOME") "/go/bin:" (getenv "PATH")))
-  )
-
 
 ;; custom-set-variables beyond this point
 (custom-set-variables
