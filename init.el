@@ -66,17 +66,21 @@ If OTHER-WINDOW is non-nil, find custom.el file in other window."
 	(find-file custom-file-name))))
 
   (defun switch-to-scratch-buffer (&optional other-window)
-    "Switch to the scratch buffer, creating it if it doesn't exist already.
-If OTHER-WINDOW is non-nil, switch to the scratch buffer in other window."
+    "Switch to the scratch buffer, creating it if it doesn't
+exist already. If OTHER-WINDOW is non-nil, switch to the scratch
+buffer in other window.  If the buffer didn't exist before, call
+SET-BUFFER-MAJOR-MODE and insert INITIAL-SCRATCH-MESSAGE."
     (interactive "P")
-    (let ((scratch-buffer
-	   (or (get-buffer "*scratch*")
-	       (generate-new-buffer "*scratch*"))))
-      (if other-window
-	  (switch-to-buffer-other-window scratch-buffer)
-	(switch-to-buffer scratch-buffer))
-      (set-buffer-major-mode (current-buffer))
-      (insert initial-scratch-message)))
+    (let* ((switch-buffer-function
+	    (if other-window
+		'switch-to-buffer-other-window 'switch-to-buffer))
+	   (existing-buffer (get-buffer "*scratch*"))
+	   (buffer-to-switch-to (or existing-buffer (generate-new-buffer "*scratch*"))))
+      (apply switch-buffer-function (list buffer-to-switch-to))
+      (unless existing-buffer
+	(set-buffer-major-mode (current-buffer))
+	(insert initial-scratch-message))
+      ))
 
   (defun switch-to-theme (theme)
     "Disable all active themes and load THEME."
