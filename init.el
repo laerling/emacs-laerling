@@ -12,6 +12,7 @@
 		       ;; UI
 		       magit
 		       smart-window
+		       swiper
 		       zygospore
 
 		       ;; programming modes
@@ -131,6 +132,10 @@ SET-BUFFER-MAJOR-MODE and insert INITIAL-SCRATCH-MESSAGE."
   (global-set-key (kbd "C-x p") 'list-processes)
   (global-set-key (kbd "C-x C-r") 'rename-buffer)
   (global-set-key (kbd "C-x 6 0") 'kill-buffer-and-frame)
+
+  ;; package basics
+  (ivy-mode 1)
+  (global-set-key (kbd "C-s") 'swiper)
 
   ;; buffers
   (global-set-key (kbd "M-n") 'next-buffer)
