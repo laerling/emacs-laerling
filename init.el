@@ -14,6 +14,7 @@
 		       rainbow-delimiters
 		       smart-window
 		       swiper
+		       which-key
 		       zygospore
 
 		       ;; programming modes
@@ -136,6 +137,7 @@ SET-BUFFER-MAJOR-MODE and insert INITIAL-SCRATCH-MESSAGE."
 
   ;; package basics
   (ivy-mode 1)
+  (which-key-mode 1)
   (global-set-key (kbd "C-s") 'swiper)
 
   ;; buffers
