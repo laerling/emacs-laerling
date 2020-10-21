@@ -128,6 +128,8 @@ SET-BUFFER-MAJOR-MODE and insert INITIAL-SCRATCH-MESSAGE."
 
   ;; basic
   (global-unset-key (kbd "C-z"))
+  (global-set-key (kbd "C-x i") 'find-init-file)
+  (global-set-key (kbd "C-x c") 'find-custom-file)
   (global-set-key (kbd "C-x m") 'eshell)
   (global-set-key (kbd "C-x t") 'toggle-truncate-lines)
   (global-set-key (kbd "C-x s") 'switch-to-scratch-buffer)
