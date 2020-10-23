@@ -26,6 +26,7 @@
 
 		       ;; themes
 		       spacemacs-theme
+		       ubuntu-theme
 		       zenburn-theme
 
 		       ))
