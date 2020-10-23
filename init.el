@@ -162,6 +162,11 @@ SET-BUFFER-MAJOR-MODE and insert INITIAL-SCRATCH-MESSAGE."
   (global-set-key (kbd "C-x C-<left>" ) (lambda () (interactive) (smart-window-move 'left)))
   (global-set-key (kbd "C-x C-<right>") (lambda () (interactive) (smart-window-move 'right)))
 
+  ;; themes
+  (global-set-key (kbd "C-x C-y") 'switch-to-theme)
+  (global-set-key (kbd "C-x C-n") 'switch-to-next-theme)
+  (global-set-key (kbd "C-x C-p") 'switch-to-previous-theme)
+
   ;; git
   (global-set-key (kbd "C-x g") 'magit-status)
   )
