@@ -25,6 +25,8 @@
 		       rust-mode
 
 		       ;; themes
+		       acme-theme
+		       gruvbox-theme
 		       spacemacs-theme
 		       ubuntu-theme
 		       zenburn-theme
