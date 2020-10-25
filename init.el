@@ -92,9 +92,9 @@ SET-BUFFER-MAJOR-MODE and insert INITIAL-SCRATCH-MESSAGE."
     "Disable all active themes and load THEME."
     (interactive
      (list (intern (completing-read "Switch to theme: "
-				    (mapcar 'symbol-name
+				    (sort (mapcar 'symbol-name
 					    (custom-available-themes)
-					    )))))
+					    ) 'string<)))))
     (when (not (member theme (custom-available-themes)))
       (error "No such theme: %S" theme))
     (dolist (active-theme custom-enabled-themes)
