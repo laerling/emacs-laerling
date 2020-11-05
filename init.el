@@ -164,6 +164,11 @@ SET-BUFFER-MAJOR-MODE and insert INITIAL-SCRATCH-MESSAGE."
   (global-set-key (kbd "C-x C-<left>" ) (lambda () (interactive) (smart-window-move 'left)))
   (global-set-key (kbd "C-x C-<right>") (lambda () (interactive) (smart-window-move 'right)))
 
+  ;; Set C-x 2 and C-x 3 back to original bindings.
+  ;; If I want to open a specific buffer in another window, I'll just use C-x 4 b
+  (global-set-key (kbd "C-x 2") 'split-window-below)
+  (global-set-key (kbd "C-x 3") 'split-window-right)
+
   ;; themes
   (global-set-key (kbd "C-x C-y") 'switch-to-theme)
   (global-set-key (kbd "C-x C-n") 'switch-to-next-theme)
