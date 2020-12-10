@@ -23,6 +23,7 @@
 		       markdown-mode
 		       nix-mode
 		       rust-mode
+		       yaml-mode
 
 		       ;; themes
 		       acme-theme
@@ -215,7 +216,8 @@ SET-BUFFER-MAJOR-MODE and insert INITIAL-SCRATCH-MESSAGE."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(rainbow-delimiters zenburn-theme zygospore spacemacs-theme rust-mode nix-mode markdown-mode json-mode go-mode smart-window magit)))
+   (quote
+    (ubuntu-theme gruvbox-theme acme-theme yaml-mode which-key swiper rainbow-delimiters zenburn-theme zygospore spacemacs-theme rust-mode nix-mode markdown-mode json-mode go-mode smart-window magit))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
