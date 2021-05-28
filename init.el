@@ -177,6 +177,7 @@ SET-BUFFER-MAJOR-MODE and insert INITIAL-SCRATCH-MESSAGE."
 
   ;; themes
   (global-set-key (kbd "C-x C-y") 'switch-to-theme)
+  (global-set-key (kbd "C-x y") 'disable-all-themes)
   (global-set-key (kbd "C-x C-n") 'switch-to-next-theme)
   (global-set-key (kbd "C-x C-p") 'switch-to-previous-theme)
 
