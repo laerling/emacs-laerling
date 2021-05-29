@@ -14,6 +14,7 @@
 		       rainbow-delimiters
 		       smart-window
 		       swiper
+		       tron-legacy-theme
 		       which-key
 		       zygospore
 
@@ -245,7 +246,7 @@ SET-BUFFER-MAJOR-MODE and insert INITIAL-SCRATCH-MESSAGE."
      ("XXX+" . "#dc752f")
      ("\\?\\?\\?+" . "#dc752f")))
  '(package-selected-packages
-   '(ubuntu-theme gruvbox-theme acme-theme yaml-mode which-key swiper rainbow-delimiters zenburn-theme zygospore spacemacs-theme rust-mode nix-mode markdown-mode json-mode go-mode smart-window magit))
+   '(tron-legacy-theme ubuntu-theme gruvbox-theme acme-theme yaml-mode which-key swiper rainbow-delimiters zenburn-theme zygospore spacemacs-theme rust-mode nix-mode markdown-mode json-mode go-mode smart-window magit))
  '(pdf-view-midnight-colors '("#b2b2b2" . "#292b2e")))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
