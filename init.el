@@ -142,10 +142,7 @@ SET-BUFFER-MAJOR-MODE and insert INITIAL-SCRATCH-MESSAGE."
   (global-set-key (kbd "C-x c") 'find-custom-file)
   (global-set-key (kbd "C-x m") 'eshell)
   (global-set-key (kbd "C-x t") 'toggle-truncate-lines)
-  (global-set-key (kbd "C-x s") 'switch-to-scratch-buffer)
   (global-set-key (kbd "C-x p") 'list-processes)
-  (global-set-key (kbd "C-x C-r") 'rename-buffer)
-  (global-set-key (kbd "C-x 6 0") 'kill-buffer-and-frame)
 
   ;; package basics
   (ivy-mode 1)
@@ -154,8 +151,13 @@ SET-BUFFER-MAJOR-MODE and insert INITIAL-SCRATCH-MESSAGE."
 
   ;; buffers
   (global-set-key (kbd "M-n") 'next-buffer)
-  (global-set-key (kbd "M-p") 'next-buffer)
+  (global-set-key (kbd "M-p") 'previous-buffer)
+  (global-set-key (kbd "C-x s") 'switch-to-scratch-buffer)
   (global-set-key (kbd "C-x 1") 'zygospore-toggle-delete-other-windows)
+  (global-set-key (kbd "C-x C-r") 'rename-buffer)
+  (global-set-key (kbd "C-x 6 0") 'kill-buffer-and-frame)
+  (global-set-key (kbd "C-x C-k") 'kill-current-buffer)
+  (global-set-key (kbd "C-<tab>") 'other-window)
 
   ;; windows
   (global-set-key (kbd "C-<up>"     ) 'windmove-up)
@@ -253,4 +255,4 @@ SET-BUFFER-MAJOR-MODE and insert INITIAL-SCRATCH-MESSAGE."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(default ((t (:height 140)))))
