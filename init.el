@@ -254,9 +254,10 @@ SET-BUFFER-MAJOR-MODE and insert INITIAL-SCRATCH-MESSAGE."
  '(package-selected-packages
    '(tron-legacy-theme ubuntu-theme gruvbox-theme acme-theme yaml-mode which-key swiper rainbow-delimiters zenburn-theme zygospore spacemacs-theme rust-mode nix-mode markdown-mode json-mode go-mode smart-window magit))
  '(pdf-view-midnight-colors '("#b2b2b2" . "#292b2e")))
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:height 140)))))
+ '(default ((t (:height 120)))))
