@@ -220,6 +220,10 @@ SET-BUFFER-MAJOR-MODE and insert INITIAL-SCRATCH-MESSAGE."
       (load-file custom-file)))
   )
 
+(progn ;; server
+  (require 'server)
+  (unless (server-running-p) (server-start))
+  )
 
 ;; custom-set-variables beyond this point
 (custom-set-variables
