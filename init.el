@@ -175,6 +175,8 @@ SET-BUFFER-MAJOR-MODE and insert INITIAL-SCRATCH-MESSAGE."
 
   ;; Set C-x 2 and C-x 3 back to original bindings.
   ;; If I want to open a specific buffer in another window, I'll just use C-x 4 b
+  (require 'smart-window)
+  (setq smart-window-remap-keys 0)
   (global-set-key (kbd "C-x 2") 'split-window-below)
   (global-set-key (kbd "C-x 3") 'split-window-right)
 
