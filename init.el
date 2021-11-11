@@ -150,8 +150,8 @@ SET-BUFFER-MAJOR-MODE and insert INITIAL-SCRATCH-MESSAGE."
   (global-set-key (kbd "C-M-s") 'swiper)
 
   ;; buffers
-  (global-set-key (kbd "M-n") 'next-buffer)
-  (global-set-key (kbd "M-p") 'previous-buffer)
+  (global-set-key (kbd "C-x C-n") 'next-buffer)
+  (global-set-key (kbd "C-x C-p") 'previous-buffer)
   (global-set-key (kbd "C-x s") 'switch-to-scratch-buffer)
   (global-set-key (kbd "C-x 1") 'zygospore-toggle-delete-other-windows)
   (global-set-key (kbd "C-x C-r") 'rename-buffer)
@@ -181,8 +181,6 @@ SET-BUFFER-MAJOR-MODE and insert INITIAL-SCRATCH-MESSAGE."
   ;; themes
   (global-set-key (kbd "C-x C-y") 'switch-to-theme)
   (global-set-key (kbd "C-x y") 'disable-all-themes)
-  (global-set-key (kbd "C-x C-n") 'switch-to-next-theme)
-  (global-set-key (kbd "C-x C-p") 'switch-to-previous-theme)
 
   ;; git
   (global-set-key (kbd "C-x g") 'magit-status)
