@@ -12,6 +12,7 @@
 		       ;; UI
 		       magit
 		       rainbow-delimiters
+		       restart-emacs
 		       smart-window
 		       swiper
 		       tron-legacy-theme
