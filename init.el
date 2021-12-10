@@ -216,49 +216,13 @@ SET-BUFFER-MAJOR-MODE and insert INITIAL-SCRATCH-MESSAGE."
   (setq ring-bell-function (lambda ()))
 
   ;; load custom script, if available
-  (let ((custom-file (concat (file-name-directory (or load-file-name "")) "custom.el")))
-    (when (file-exists-p custom-file)
-      (load-file custom-file)))
+  (let ((custom-user-file (concat (file-name-directory (or load-file-name "")) "custom.el")))
+    (setq custom-file custom-user-file)
+    (when (file-exists-p custom-user-file)
+      (load-file custom-user-file)))
   )
 
 (progn ;; server
   (require 'server)
   (unless (server-running-p) (server-start))
   )
-
-;; custom-set-variables beyond this point
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(ansi-color-names-vector
-   ["#0a0814" "#f2241f" "#67b11d" "#b1951d" "#4f97d7" "#a31db1" "#28def0" "#b2b2b2"])
- '(custom-safe-themes
-   '("387b487737860e18cbb92d83a42616a67c1edfd0664d521940e7fbf049c315ae" default))
- '(hl-todo-keyword-faces
-   '(("TODO" . "#dc752f")
-     ("NEXT" . "#dc752f")
-     ("THEM" . "#2d9574")
-     ("PROG" . "#4f97d7")
-     ("OKAY" . "#4f97d7")
-     ("DONT" . "#f2241f")
-     ("FAIL" . "#f2241f")
-     ("DONE" . "#86dc2f")
-     ("NOTE" . "#b1951d")
-     ("KLUDGE" . "#b1951d")
-     ("HACK" . "#b1951d")
-     ("TEMP" . "#b1951d")
-     ("FIXME" . "#dc752f")
-     ("XXX+" . "#dc752f")
-     ("\\?\\?\\?+" . "#dc752f")))
- '(package-selected-packages
-   '(tron-legacy-theme ubuntu-theme gruvbox-theme acme-theme yaml-mode which-key swiper rainbow-delimiters zenburn-theme zygospore spacemacs-theme rust-mode nix-mode markdown-mode json-mode go-mode smart-window magit))
- '(pdf-view-midnight-colors '("#b2b2b2" . "#292b2e")))
-
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:height 120)))))
