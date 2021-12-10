@@ -143,7 +143,7 @@ SET-BUFFER-MAJOR-MODE and insert INITIAL-SCRATCH-MESSAGE."
   (global-set-key (kbd "C-x c") 'find-custom-file)
   (global-set-key (kbd "C-x m") 'eshell)
   (global-set-key (kbd "C-x t") 'toggle-truncate-lines)
-  (global-set-key (kbd "C-x p") 'list-processes)
+  (global-set-key (kbd "C-x p") 'list-packages)
 
   ;; package basics
   (ivy-mode 1)
