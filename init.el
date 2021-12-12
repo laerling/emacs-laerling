@@ -26,6 +26,7 @@
 		       nix-mode
 		       rust-mode
 		       yaml-mode
+		       graphviz-dot-mode
 
 		       ;; themes
 		       acme-theme
