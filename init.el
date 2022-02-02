@@ -130,6 +130,23 @@ SET-BUFFER-MAJOR-MODE and insert INITIAL-SCRATCH-MESSAGE."
 	(ignore-errors
 	  (with-current-buffer buffer-to-kill
 	    (remove-hook 'kill-buffer-hook delete-frame-hook t))))))
+
+  (defun forward-whitespace-beginning ()
+    "Move point to the beginning of the next sequence of whitespace chars.
+Each such sequence may be a single newline, or a sequence of
+consecutive space and/or tab characters."
+    (interactive)
+    (re-search-forward "[^ \t\n][ \t\n]" nil 'move 1)
+    (backward-char))
+
+  (defun backward-whitespace ()
+    "Move point to the end of the last sequence of whitespace chars.
+Each such sequence may be a single newline, or a sequence of
+consecutive space and/or tab characters."
+    (interactive)
+    (re-search-backward "[ \t\n][^ \t\n]" nil 'move 1)
+    (forward-char))
+
   )
 
 (progn ;; handling (keybindings etc.)
@@ -145,6 +162,8 @@ SET-BUFFER-MAJOR-MODE and insert INITIAL-SCRATCH-MESSAGE."
   (global-set-key (kbd "C-x m") 'eshell)
   (global-set-key (kbd "C-x t") 'toggle-truncate-lines)
   (global-set-key (kbd "C-x p") 'list-packages)
+  (global-set-key (kbd "M-n") 'forward-whitespace-beginning)
+  (global-set-key (kbd "M-p") 'backward-whitespace)
 
   ;; package basics
   (ivy-mode 1)
