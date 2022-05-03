@@ -174,6 +174,7 @@ consecutive space and/or tab characters."
   (global-set-key (kbd "C-x C-n") 'next-buffer)
   (global-set-key (kbd "C-x C-p") 'previous-buffer)
   (global-set-key (kbd "C-x s") 'switch-to-scratch-buffer)
+  (global-set-key (kbd "C-x 4 s") (lambda () (interactive) (switch-to-scratch-buffer 'other-window))) ;; alternative to C-u C-x s
   (global-set-key (kbd "C-x 1") 'zygospore-toggle-delete-other-windows)
   (global-set-key (kbd "C-x C-r") 'revert-buffer)
   (global-set-key (kbd "C-x M-r") 'rename-buffer)
