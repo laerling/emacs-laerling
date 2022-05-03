@@ -12,3 +12,5 @@ session.*
 custom.el
 tramp
 /games/
+
+network-security.data
