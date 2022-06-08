@@ -15,7 +15,6 @@
 		       restart-emacs
 		       smart-window
 		       swiper
-		       tron-legacy-theme
 		       which-key
 		       zygospore
 
@@ -31,7 +30,9 @@
 		       ;; themes
 		       acme-theme
 		       gruvbox-theme
+		       immaterial-theme
 		       spacemacs-theme
+		       tron-legacy-theme
 		       ubuntu-theme
 		       zenburn-theme
 
