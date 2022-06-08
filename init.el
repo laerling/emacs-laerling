@@ -214,6 +214,12 @@ consecutive space and/or tab characters."
 
   ;; grepping
   (setq grep-command "grep --color -n -r ") ;; -n is needed for proper rendering in the *grep* buffer
+
+  ;; org
+  (require 'org)
+  (define-key org-mode-map (kbd "C-c n") 'org-next-item)
+  (define-key org-mode-map (kbd "C-c p") 'org-previous-item)
+
   )
 
 (progn ;; looks and sound
