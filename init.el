@@ -160,6 +160,7 @@ consecutive space and/or tab characters."
   (global-unset-key (kbd "C-z"))
   (global-set-key (kbd "C-x i") 'find-init-file)
   (global-set-key (kbd "C-x c") 'find-custom-file)
+  (global-set-key (kbd "C-x 4 c") (lambda () (interactive) (find-custom-file 'other-window)))
   (global-set-key (kbd "C-x m") 'eshell)
   (global-set-key (kbd "C-x t") 'toggle-truncate-lines)
   (global-set-key (kbd "C-x p") 'list-packages)
