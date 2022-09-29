@@ -32,6 +32,7 @@
 		       gruvbox-theme
 		       immaterial-theme
 		       spacemacs-theme
+		       the-matrix-theme
 		       tron-legacy-theme
 		       ubuntu-theme
 		       zenburn-theme
