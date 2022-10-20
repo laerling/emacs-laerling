@@ -67,15 +67,21 @@ If OTHER-WINDOW is non-nil, find init file in other window."
 	  (find-file-other-window init-file-name)
 	(find-file init-file-name))))
 
-  (defun find-custom-file (&optional other-window)
-    "Find the custom.el file.
-If OTHER-WINDOW is non-nil, find custom.el file in other window."
-    (interactive "P")
+  (defun find-custom-file ()
+    "Find the custom.el file."
+    (interactive)
     (let ((custom-file-name
-	   (concat (url-basepath (symbol-file 'find-custom-file)) "custom.el")))
-      (if other-window
-	  (find-file-other-window custom-file-name)
-	(find-file custom-file-name))))
+	   (concat (url-basepath (symbol-file 'find-custom-file))
+		   "custom.el")))
+      (find-file custom-file-name)))
+
+  (defun find-custom-file-other-window ()
+    "Find the custom.el file in another window."
+    (interactive)
+    (let ((custom-file-name
+	   (concat (url-basepath (symbol-file 'find-custom-file-other-window))
+		   "custom.el")))
+      (find-file-other-window custom-file-name)))
 
   (defun switch-to-scratch-buffer (&optional other-window)
     "Switch to the scratch buffer, creating it if it doesn't
@@ -161,7 +167,7 @@ consecutive space and/or tab characters."
   (global-unset-key (kbd "C-z"))
   (global-set-key (kbd "C-x i") 'find-init-file)
   (global-set-key (kbd "C-x c") 'find-custom-file)
-  (global-set-key (kbd "C-x 4 c") (lambda () (interactive) (find-custom-file 'other-window)))
+  (global-set-key (kbd "C-x 4 c") 'find-custom-file-other-window)
   (global-set-key (kbd "C-x m") 'eshell)
   (global-set-key (kbd "C-x t") 'toggle-truncate-lines)
   (global-set-key (kbd "C-x p") 'list-packages)
