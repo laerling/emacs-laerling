@@ -230,6 +230,8 @@ consecutive space and/or tab characters."
   (require 'org)
   (define-key org-mode-map (kbd "C-c n") 'org-next-item)
   (define-key org-mode-map (kbd "C-c p") 'org-previous-item)
+  (define-key org-mode-map (kbd "C-<") 'org-outdent-item-tree)
+  (define-key org-mode-map (kbd "C->") 'org-indent-item-tree)
 
   )
 
