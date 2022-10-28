@@ -221,7 +221,6 @@ consecutive space and/or tab characters."
 
   ;; git
   (global-set-key (kbd "C-x g") 'magit-status)
-  (global-set-key (kbd "C-x C-g") 'magit-status)
 
   ;; grepping
   (setq grep-command "grep --color -n -r ") ;; -n is needed for proper rendering in the *grep* buffer
