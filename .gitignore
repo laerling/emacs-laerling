@@ -6,11 +6,13 @@
 /transient
 /url
 /eshell
+/eln-cache
 
 recentf
 session.*
 custom.el
 tramp
 /games/
+.org-id-locations
 
 network-security.data
