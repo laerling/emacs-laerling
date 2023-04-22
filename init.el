@@ -170,7 +170,6 @@ consecutive space and/or tab characters."
   (global-set-key (kbd "C-x c") 'find-custom-file)
   (global-set-key (kbd "C-x 4 c") 'find-custom-file-other-window)
   (global-set-key (kbd "C-x m") 'eshell)
-  (global-set-key (kbd "C-x t") 'toggle-truncate-lines)
   (global-set-key (kbd "C-x p") 'list-packages)
   (global-set-key (kbd "M-n") 'forward-whitespace-beginning)
   (global-set-key (kbd "M-p") 'backward-whitespace)
@@ -189,8 +188,6 @@ consecutive space and/or tab characters."
   (global-set-key (kbd "C-x 4 s") (lambda () (interactive) (switch-to-scratch-buffer 'other-window))) ;; alternative to C-u C-x s
   (global-set-key (kbd "C-x 1") 'zygospore-toggle-delete-other-windows)
   (global-set-key (kbd "C-x C-1") 'zygospore-toggle-delete-other-windows)
-  (global-set-key (kbd "C-x C-r") 'revert-buffer)
-  (global-set-key (kbd "C-x M-r") 'rename-buffer)
   (global-set-key (kbd "C-x 6 0") 'kill-buffer-and-frame)
   (global-set-key (kbd "C-x C-k") 'kill-current-buffer)
   (global-set-key (kbd "C-<tab>") 'other-window)
