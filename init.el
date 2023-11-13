@@ -37,6 +37,7 @@
 		       tron-legacy-theme
 		       ubuntu-theme
 		       zenburn-theme
+		       zerodark-theme
 
 		       ))
 
