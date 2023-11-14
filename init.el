@@ -29,6 +29,7 @@
 
 		       ;; themes
 		       acme-theme
+		       darcula-theme
 		       gruvbox-theme
 		       immaterial-theme
 		       spacemacs-theme
