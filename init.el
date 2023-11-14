@@ -163,7 +163,7 @@ consecutive space and/or tab characters."
 (progn ;; handling (keybindings etc.)
 
   ;; don't be an Emacs newbie
-  (defalias 'yes-or-no-p 'y-or-n-p)
+  (defalias 'yes-or-no-p 'y-or-n-p) ;; TODO instead set option use-short-answers (available from Emacs 28.1)
   (setq disabled-command-function nil)
 
   ;; basic
