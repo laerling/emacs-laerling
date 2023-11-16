@@ -107,7 +107,9 @@ SET-BUFFER-MAJOR-MODE and insert INITIAL-SCRATCH-MESSAGE."
     "Disable all active themes."
     (interactive)
     (dolist (active-theme custom-enabled-themes)
-      (disable-theme active-theme)))
+      (disable-theme active-theme))
+    ;; reset mouse cursor color to standard
+    (set-mouse-color "#ffffff"))
 
   (defun switch-to-theme (theme)
     "Disable all active themes and load THEME."
