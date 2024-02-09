@@ -29,6 +29,7 @@
 
 		       ;; themes
 		       acme-theme
+		       atom-dark-theme
 		       darcula-theme
 		       gruvbox-theme
 		       immaterial-theme
@@ -116,7 +117,7 @@ SET-BUFFER-MAJOR-MODE and insert INITIAL-SCRATCH-MESSAGE."
     (interactive
      (list (intern (completing-read "Switch to theme: "
 				    (sort (mapcar 'symbol-name
-						  (custom-available-themes)
+						  (custom-available-themes) ;; FIXME also shows non-loadable themes (like 'spacemacs', not just 'spacemacs-dark' and 'spacemacs-light')
 						  ) 'string<)))))
     (when (not (member theme (custom-available-themes)))
       (error "No such theme: %S" theme))
