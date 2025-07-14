@@ -183,6 +183,10 @@ consecutive space and/or tab characters."
 
   ;; package basics
   (ivy-mode 1)
+  ; unset minibuffer mapping of ivy-restrict-to-matches - I often
+  ; accidentally delete my input when pressing S-SPC right after
+  ; having written a capital letter.
+  (keymap-unset ivy-minibuffer-map "S-SPC")
   (which-key-mode 1)
   (global-set-key (kbd "C-M-s") 'swiper)
 
