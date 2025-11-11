@@ -176,6 +176,7 @@ consecutive space and/or tab characters."
   (global-set-key (kbd "C-x 4 c") 'find-custom-file-other-window)
   (global-set-key (kbd "C-x m") 'eshell)
   (global-set-key (kbd "C-x l") 'display-line-numbers-mode)
+  (global-set-key (kbd "C-x p") 'list-processes)
   (global-set-key (kbd "M-n") 'forward-whitespace-beginning)
   (global-set-key (kbd "M-p") 'backward-whitespace)
   (global-set-key (kbd "C-x \"") 'ivy-switch-buffer) ;; screen muscle memory
