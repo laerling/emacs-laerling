@@ -248,6 +248,7 @@ consecutive space and/or tab characters."
   ;; fix the UI
   (tool-bar-mode 0)
   (menu-bar-mode 0)
+  (toggle-scroll-bar -1)
 
   ;; use rainbow delimiters
   (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
