@@ -29,6 +29,7 @@
 
 		       ;; themes
 		       acme-theme
+		       ahungry-theme ; cyberpunk-like (changes font)
 		       atom-dark-theme
 		       darcula-theme
 		       gruvbox-theme
